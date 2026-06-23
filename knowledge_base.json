@@ -1,0 +1,240 @@
+{
+  "company": {
+    "name": "Krucx Technologies LTD",
+    "founded": 2016,
+    "clients_served": "1,200+",
+    "positioning": "AI-powered digital agency focused on websites, business automation, marketing, mobile applications, and ERP solutions.",
+    "locations": "Germany and UK (clients worldwide)",
+    "languages": "English, German"
+  },
+  "services": {
+    "web_development": [
+      "Business websites",
+      "Landing pages",
+      "Ecommerce stores (Shopify, WordPress, Magento)",
+      "Custom platforms"
+    ],
+    "mobile_development": [
+      "Android apps",
+      "iOS apps",
+      "Cross-platform apps"
+    ],
+    "ai_and_automation": [
+      "AI chatbots",
+      "Workflow automation",
+      "CRM automation",
+      "Lead qualification",
+      "Customer support automation",
+      "Document processing",
+      "AI integrations"
+    ],
+    "erp_solutions": [
+      "Odoo ERP",
+      "Inventory",
+      "HR",
+      "Payroll",
+      "Accounting",
+      "Invoicing"
+    ],
+    "marketing": [
+      "SEO",
+      "Google Ads",
+      "Facebook Ads",
+      "Instagram Ads",
+      "Email marketing",
+      "Affiliate marketing"
+    ],
+    "branding": [
+      "Logo design",
+      "Brand identity",
+      "UI/UX design",
+      "Wireframes"
+    ]
+  },
+  "pricing_ranges": {
+    "note": "These are indicative ranges. Final pricing depends on scope, complexity, and integrations. A free quote is always available at https://krucx.de/get-a-free-quote/",
+    "web_development": {
+      "landing_page": "Starting from €500–€1,500",
+      "business_website": "€1,500–€5,000 depending on pages and features",
+      "ecommerce_store": "€2,000–€10,000+ depending on product catalog size and integrations",
+      "custom_platform": "€8,000+ for fully bespoke systems"
+    },
+    "mobile_development": {
+      "simple_app": "€5,000–€15,000",
+      "complex_app": "€15,000–€50,000+ depending on features and backend"
+    },
+    "ai_and_automation": {
+      "ai_chatbot": "€1,500–€5,000 for a trained, integrated chatbot",
+      "workflow_automation": "€1,000–€8,000 depending on number of integrations",
+      "erp_automation": "€3,000–€15,000 depending on ERP complexity"
+    },
+    "erp_solutions": {
+      "odoo_setup": "€3,000–€12,000 depending on modules (HR, accounting, inventory, etc.)",
+      "monthly_support": "Available on retainer from €500/month"
+    },
+    "marketing": {
+      "seo_monthly": "€500–€2,000/month depending on competition and target market",
+      "google_ads_management": "€500–€1,500/month management fee (ad spend is separate)",
+      "social_ads_management": "€400–€1,200/month management fee"
+    },
+    "branding": {
+      "logo_and_brand_identity": "€500–€2,500",
+      "full_ui_ux_design": "€2,000–€8,000 depending on number of screens"
+    }
+  },
+  "process": {
+    "steps": [
+      "1. Discovery call — understand your business, goals, and pain points (free)",
+      "2. Proposal — scoped solution with timeline and fixed price quote",
+      "3. Design phase — wireframes and UI mockups for approval",
+      "4. Development — iterative builds with regular client check-ins",
+      "5. Testing & QA — thorough testing before launch",
+      "6. Launch & handover — full training and documentation",
+      "7. Ongoing support — available on retainer or as-needed basis"
+    ],
+    "typical_timelines": {
+      "landing_page": "1–2 weeks",
+      "business_website": "2–4 weeks",
+      "ecommerce_store": "4–8 weeks",
+      "mobile_app": "8–20 weeks",
+      "ai_chatbot": "2–4 weeks",
+      "erp_implementation": "6–16 weeks"
+    }
+  },
+  "faq": {
+    "do_you_work_internationally": "Yes, Krucx works with clients across Europe, Middle East, and globally. Most of our work is done remotely. We have clients in Germany, UK, UAE, Pakistan, and beyond.",
+    "what_makes_you_different": "We combine technical development with AI and automation expertise. Unlike typical agencies, we don't just build — we help businesses actually reduce costs and save time with smart systems. We've served 1,200+ clients since 2016.",
+    "do_you_offer_ongoing_support": "Yes, we offer monthly retainer packages for hosting, maintenance, updates, and support. We can also be available on an as-needed hourly basis.",
+    "can_you_integrate_with_existing_systems": "Absolutely. We integrate with Shopify, WooCommerce, Odoo, SAP, HubSpot, Salesforce, Zapier, and most major platforms via API.",
+    "do_you_sign_ndas": "Yes, we sign NDAs on request before sharing sensitive project details.",
+    "do_you_have_a_portfolio": "Yes, our portfolio is at https://krucx.de/portfolio/ — we have case studies across logistics, ecommerce, healthcare, and manufacturing.",
+    "how_do_i_get_started": "The quickest way is to fill out our project form at https://krucx.de/start-a-project/ or get a free quote at https://krucx.de/get-a-free-quote/. You can also WhatsApp or email us directly.",
+    "do_you_use_templates_or_custom_code": "Both — we use premium templates when they fit the budget and goal, and build custom from scratch when needed. We always recommend the most cost-effective approach for your situation.",
+    "what_technologies_do_you_use": "Python, React, Next.js, Node.js, Shopify, WordPress, Flutter (mobile), Odoo, PostgreSQL, AWS, and more. We pick the right tool for the job.",
+    "can_you_help_with_a_small_budget": "Yes, we have solutions at different price points. A basic landing page starts from €500. We always try to find an approach that fits the budget and delivers real value.",
+    "how_much_does_a_website_cost": "Depends on what you need. A simple landing page starts around €500–1,500. A full business website is typically €1,500–5,000. An ecommerce store ranges from €2,000–10,000+. We give fixed-price quotes after a short discovery call — no surprises.",
+    "how_long_does_a_project_take": "A landing page takes 1–2 weeks. A full website 2–4 weeks. An ecommerce store 4–8 weeks. A mobile app or ERP implementation is typically 2–5 months. We give you a clear timeline upfront.",
+    "do_you_build_shopify_stores": "Yes, Shopify is one of our specialties. We build custom Shopify themes, integrate apps, set up payment gateways, and handle product imports. We also work with WooCommerce and Magento.",
+    "can_you_build_an_ai_chatbot": "Yes, AI chatbots are one of our key services. We build chatbots for customer support, lead qualification, WhatsApp, and website chat. Integration with your CRM or backend is included.",
+    "do_you_do_seo": "Yes, we offer technical SEO, on-page optimization, content strategy, and local SEO. Monthly retainers start from €500/month with clear reporting."
+  },
+  "portfolio_highlights": {
+    "logistics": [
+      "Automated email-to-order processing system for a UK freight forwarder — eliminated 4 hours of daily manual data entry",
+      "SAP integration and dispatcher dashboard for a German logistics company with 50+ trucks",
+      "WhatsApp-based shipment tracking bot for a courier service"
+    ],
+    "ecommerce": [
+      "Custom Shopify store with 2,000+ products and ERP inventory sync for a fashion brand",
+      "AI product recommendation engine integrated into a WooCommerce store (35% uplift in average order value)",
+      "Full-stack marketplace platform for a UAE-based electronics distributor"
+    ],
+    "healthcare": [
+      "Online booking and appointment reminder system for a chain of dental clinics (reduced no-shows by 40%)",
+      "Patient portal with automated follow-up messaging for a physiotherapy practice"
+    ],
+    "manufacturing": [
+      "Odoo ERP implementation covering HR, payroll, inventory, and production tracking for a 120-person factory",
+      "Quality control reporting dashboard integrated with existing production line software"
+    ],
+    "restaurants": [
+      "Online reservation and loyalty program system for a restaurant group with 5 locations",
+      "WhatsApp ordering bot for a cloud kitchen"
+    ]
+  },
+  "industries": {
+    "logistics": {
+      "common_problems": [
+        "Manual order entry",
+        "Email processing",
+        "SAP data entry",
+        "Dispatch bottlenecks",
+        "POD management",
+        "Invoice processing",
+        "Customer tracking requests"
+      ],
+      "automation_opportunities": [
+        "Email-to-order AI",
+        "SAP integration",
+        "Dispatcher dashboards",
+        "Automated status updates",
+        "Customer support AI",
+        "Invoice automation"
+      ]
+    },
+    "healthcare": {
+      "common_problems": [
+        "Missed appointments",
+        "Manual booking",
+        "Administrative overhead",
+        "Patient communication"
+      ],
+      "solutions": [
+        "Online booking",
+        "Reminder systems",
+        "Patient portals",
+        "CRM automation"
+      ]
+    },
+    "restaurants": {
+      "common_problems": [
+        "No-shows",
+        "Reservation management",
+        "Customer retention",
+        "Online visibility"
+      ],
+      "solutions": [
+        "Reservation systems",
+        "Loyalty programs",
+        "Automated customer engagement",
+        "Local SEO"
+      ]
+    },
+    "manufacturing": {
+      "common_problems": [
+        "Production tracking",
+        "Inventory issues",
+        "Quality management",
+        "ERP inefficiencies"
+      ],
+      "solutions": [
+        "ERP integration",
+        "Production dashboards",
+        "Workflow automation",
+        "Quality reporting"
+      ]
+    },
+    "ecommerce": {
+      "common_problems": [
+        "Cart abandonment",
+        "Customer support volume",
+        "Inventory synchronization",
+        "Low conversion rates"
+      ],
+      "solutions": [
+        "AI chatbots",
+        "Marketing automation",
+        "Inventory integration",
+        "Conversion optimization"
+      ]
+    }
+  },
+  "team": [
+    {"name": "Ali Zafar", "role": "General Manager"},
+    {"name": "Umair Ajmal", "role": "Web Head"},
+    {"name": "M. Irtaza", "role": "Digital Marketing Head"},
+    {"name": "Muhammad Usman Ghani", "role": "Business Development"},
+    {"name": "Jazib Munir", "role": "Design Head"},
+    {"name": "Hamza Butt", "role": "Senior Project Manager"}
+  ],
+  "contact": {
+    "email": "hello@krucx.de",
+    "phone_germany": "+49 163 625 2297",
+    "phone_uk": "+44 742 552 9752"
+  },
+  "links": {
+    "start_a_project": "https://krucx.de/start-a-project/",
+    "free_quote": "https://krucx.de/get-a-free-quote/",
+    "portfolio": "https://krucx.de/portfolio/"
+  }
+}

@@ -1,0 +1,25 @@
+[project]
+name = "krucx-bot"
+version = "1.0.0"
+description = "Krucx Technologies WhatsApp AI Lead Qualification Bot"
+requires-python = ">=3.8"
+dependencies = [
+    "openai>=1.40.0",
+    "python-dotenv>=1.0.0",
+    "fastapi>=0.111.0",
+    "uvicorn[standard]>=0.30.0",
+    "sqlalchemy>=2.0.0",
+    "twilio>=9.0.0",
+    "pydantic>=2.0.0",
+    "python-multipart>=0.0.9",
+    "requests>=2.32.4",
+]
+
+[dependency-groups]
+dev = []
+
+# Run commands:
+#   uv run uvicorn app:app --reload        — start the web server
+#   uv run python chat_cli.py              — CLI conversation test
+#   uv add <package>                       — add a new dependency
+#   uv sync                                — install / update the venv
