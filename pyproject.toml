@@ -19,7 +19,7 @@ dependencies = [
 dev = []
 
 # Run commands:
-#   uv run uvicorn app:app --reload        — start the web server
-#   uv run python chat_cli.py              — CLI conversation test
-#   uv add <package>                       — add a new dependency
-#   uv sync                                — install / update the venv
+#   uv run uvicorn app.main:app --reload        — start the web server
+#   uv run python scripts/chat_cli.py           — CLI conversation test
+#   uv add <package>                            — add a new dependency
+#   uv sync                                     — install / update the venv

@@ -20,20 +20,34 @@ AI-powered WhatsApp lead qualification bot for Krucx Technologies. Prospects mes
 
 ```
 KrucxBot/
-├── app.py                  # FastAPI server — webhook + admin API routes
-├── bot_handler.py          # Orchestration: DB ↔ AI ↔ Twilio
-├── conversation_engine.py  # DeepSeek calls: reply generation + field extraction
-├── kb_retriever.py         # Knowledge base lookup helpers
-├── lead_profile.py         # LeadProfile dataclass (in-memory per conversation)
-├── database.py             # SQLAlchemy models (Lead, Message) + session factory
-├── knowledge_base.json     # Company info, services, FAQ, pricing, industries
-├── chat_cli.py             # Local CLI test harness (no infra needed)
-├── pyproject.toml          # Dependencies managed by uv
-├── uv.lock                 # Locked dependency tree (commit this)
-├── .env                    # Secrets — never commit
-├── .env.example            # Template for .env
-└── templates/
-    └── dashboard.html      # Admin dashboard (Tailwind + vanilla JS)
+├── app/                        # Python package — all backend logic
+│   ├── __init__.py
+│   ├── main.py                 # FastAPI server — webhook + admin API routes
+│   ├── bot_handler.py          # Orchestration: DB ↔ AI ↔ Twilio
+│   ├── conversation_engine.py  # DeepSeek calls: reply generation + field extraction
+│   ├── kb_retriever.py         # Knowledge base lookup helpers
+│   ├── lead_profile.py         # LeadProfile dataclass (in-memory per conversation)
+│   └── database.py             # SQLAlchemy models (Lead, Message) + session factory
+├── frontend/                   # Static admin dashboard (HTML + CSS + JS)
+│   ├── index.html
+│   ├── css/style.css
+│   └── js/
+│       ├── api.js
+│       └── app.js
+├── data/
+│   └── knowledge_base.json     # Company info, services, FAQ, pricing, industries
+├── docs/
+│   ├── krucx_knowledge_base.pdf
+│   └── krucx_whatsapp_assistant.pdf
+├── scripts/
+│   └── chat_cli.py             # Local CLI test harness (no infra needed)
+├── tests/
+│   └── __init__.py
+├── pyproject.toml              # Dependencies managed by uv
+├── uv.lock                     # Locked dependency tree (commit this)
+├── .env                        # Secrets — never commit
+├── .env.example                # Template for .env
+└── HOWTORUN.md                 # Quick-start guide
 ```
 
 ---
@@ -82,7 +96,7 @@ DATABASE_URL=sqlite:///./krucx_leads.db
 ### Development server
 
 ```bash
-uv run uvicorn app:app --reload
+uv run uvicorn app.main:app --reload
 ```
 
 - Server: `http://localhost:8000`
@@ -92,7 +106,7 @@ uv run uvicorn app:app --reload
 ### CLI conversation test (no Twilio or DB needed)
 
 ```bash
-uv run python chat_cli.py
+uv run python scripts/chat_cli.py
 ```
 
 Simulates a WhatsApp conversation in your terminal. Useful for testing bot behaviour before wiring up live infrastructure.
@@ -150,10 +164,10 @@ uv sync
 
 Open `http://localhost:8000/` while the server is running.
 
-- **Left panel**: all leads sorted by last activity, with qualification score badges
-- **Right panel**: click any lead to see the full conversation thread
-- Refreshes automatically every 30 seconds
-- Score: 0–1 = gray, 2–3 = yellow, 4 = green
+- **Left panel**: all leads sorted by last activity, with qualification score badges and last message preview
+- **Right panel**: click any lead to see the full conversation thread + extracted profile fields
+- Auto-refreshes leads every 15 seconds; active conversation every 8 seconds
+- Score: 0–1 = no border, 2–3 = amber border, 4 = green border
 
 ---
 

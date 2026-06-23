@@ -1,5 +1,5 @@
 """
-app.py — FastAPI application for the Krucx WhatsApp AI Bot.
+main.py — FastAPI application for the Krucx WhatsApp AI Bot.
 
 Routes:
   POST /webhook                         Twilio incoming message webhook
@@ -21,8 +21,8 @@ from fastapi.staticfiles import StaticFiles
 from sqlalchemy import func
 from sqlalchemy.orm import Session
 
-from database import Lead, Message, get_db, init_db
-from bot_handler import handle_incoming_message
+from .database import Lead, Message, get_db, init_db
+from .bot_handler import handle_incoming_message
 
 
 @asynccontextmanager

@@ -29,8 +29,8 @@ The venv is at `.venv/`. Source of truth is `pyproject.toml` + `uv.lock` (both c
 ## How to run
 
 ```bash
-uv run uvicorn app:app --reload        # web server (port 8000)
-uv run python chat_cli.py              # CLI test — no DB or Twilio needed
+uv run uvicorn app.main:app --reload      # web server (port 8000)
+uv run python scripts/chat_cli.py         # CLI test — no DB or Twilio needed
 ```
 
 ---
@@ -38,14 +38,14 @@ uv run python chat_cli.py              # CLI test — no DB or Twilio needed
 ## Architecture
 
 ```
-WhatsApp → Twilio → POST /webhook (app.py)
+WhatsApp → Twilio → POST /webhook (app/main.py)
                         ↓
               bot_handler.handle_incoming_message()
                ├── database.py         (load/save Lead + Message rows)
                ├── conversation_engine.py  (2 DeepSeek calls per turn)
                │     ├── extract_profile_updates()  — JSON field extraction
                │     └── generate_reply()           — WhatsApp reply text
-               └── kb_retriever.py     (lookup from knowledge_base.json)
+               └── kb_retriever.py     (lookup from data/knowledge_base.json)
 ```
 
 Admin dashboard at `GET /` reads from `GET /admin/leads` and `GET /admin/leads/{id}/conversation`.
@@ -56,15 +56,15 @@ Admin dashboard at `GET /` reads from `GET /admin/leads` and `GET /admin/leads/{
 
 | File | Purpose |
 |------|---------|
-| `app.py` | FastAPI routes: webhook, dashboard, admin API |
-| `bot_handler.py` | One turn: DB ↔ profile ↔ AI ↔ Twilio |
-| `conversation_engine.py` | DeepSeek calls + system prompt builder |
-| `lead_profile.py` | `LeadProfile` dataclass — never re-ask known fields |
-| `kb_retriever.py` | Read from `knowledge_base.json` |
-| `knowledge_base.json` | Company info, services, FAQ, pricing, industries |
-| `database.py` | SQLAlchemy `Lead` + `Message` models, `get_db()`, `init_db()` |
-| `chat_cli.py` | Terminal test harness — tests bot logic without infra |
-| `templates/dashboard.html` | Admin UI (Tailwind CDN + vanilla JS, no build step) |
+| `app/main.py` | FastAPI routes: webhook, admin API |
+| `app/bot_handler.py` | One turn: DB ↔ profile ↔ AI ↔ Twilio |
+| `app/conversation_engine.py` | DeepSeek calls + system prompt builder |
+| `app/lead_profile.py` | `LeadProfile` dataclass — never re-ask known fields |
+| `app/kb_retriever.py` | Read from `data/knowledge_base.json` |
+| `app/database.py` | SQLAlchemy `Lead` + `Message` models, `get_db()`, `init_db()` |
+| `data/knowledge_base.json` | Company info, services, FAQ, pricing, industries |
+| `scripts/chat_cli.py` | Terminal test harness — tests bot logic without infra |
+| `frontend/` | Static admin dashboard (HTML + CSS + JS, no build step) |
 
 ---
 
@@ -106,6 +106,7 @@ No migrations tool configured. `init_db()` calls `Base.metadata.create_all()` at
 - No print-based logging in production paths — use `print(f"[warn] ...")` or `print(f"[error] ...")` for now (no logging framework yet)
 - `load_dotenv()` is called at the top of every module that reads env vars
 - `.env` is never committed — `.env.example` is the template
+- All intra-package imports use relative form: `from .database import ...`, `from . import kb_retriever as kb`
 
 ---
 
@@ -133,6 +134,7 @@ Each conversation turn makes **two sequential DeepSeek API calls** (~2–5s each
 - Don't add a migration framework (Alembic) unless the schema needs to change on a live DB
 - Don't switch to Meta Cloud API without checking business verification requirements
 - Don't cache the KB in memory across hot reloads — `kb_retriever.py` loads JSON at import time, which is fine
-- Don't add frontend frameworks (React/Vue) to the dashboard — the single HTML file is intentional
+- Don't add frontend frameworks (React/Vue) to the dashboard — the static `frontend/` folder is intentional
 - Don't use `pip` — always use `uv add` / `uv remove` / `uv sync`
 - The venv Python is 3.14 (managed by uv), not the system 3.8 — don't assume system Python
+- Don't use absolute imports for intra-package modules (e.g. `import app.database`) — use relative imports (`from .database import ...`)

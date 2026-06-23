@@ -22,8 +22,8 @@ from openai import OpenAI
 
 load_dotenv()
 
-from lead_profile import LeadProfile
-import kb_retriever as kb
+from .lead_profile import LeadProfile
+from . import kb_retriever as kb
 
 DEEPSEEK_API_KEY = os.environ.get("DEEPSEEK_API_KEY")
 DEEPSEEK_BASE_URL = "https://api.deepseek.com"

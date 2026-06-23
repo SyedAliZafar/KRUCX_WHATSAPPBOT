@@ -29,9 +29,9 @@ from sqlalchemy.exc import IntegrityError
 from sqlalchemy.orm import Session
 from twilio.rest import Client as TwilioClient
 
-from database import Lead, Message
-from lead_profile import LeadProfile
-import conversation_engine as engine
+from .database import Lead, Message
+from .lead_profile import LeadProfile
+from . import conversation_engine as engine
 
 TWILIO_ACCOUNT_SID = os.environ.get("TWILIO_ACCOUNT_SID")
 TWILIO_AUTH_TOKEN = os.environ.get("TWILIO_AUTH_TOKEN")
@@ -162,7 +162,7 @@ def _send_whatsapp(to: str, body: str) -> Optional[str]:
 
 def handle_incoming_message(db: Session, from_number: str, user_text: str) -> str:
     """
-    Full turn handler. Called by app.py for every POST /webhook.
+    Full turn handler. Called by main.py for every POST /webhook.
 
     Args:
         db:          SQLAlchemy session (injected by FastAPI Depends)

@@ -6,9 +6,9 @@ just the conversation engine + in-memory state, so we can validate the
 bot's behavior (tone, qualification, memory, escalation) before wiring
 up any real infrastructure.
 
-Run:
+Run from the project root:
     export DEEPSEEK_API_KEY=sk-...
-    python chat_cli.py
+    uv run python scripts/chat_cli.py
 
 Commands during chat:
     /profile   - print the current lead profile JSON
@@ -18,8 +18,14 @@ Commands during chat:
 
 import os
 import sys
-from lead_profile import LeadProfile
-import conversation_engine as engine
+from pathlib import Path
+
+# Ensure the project root is on sys.path so `app.*` imports resolve
+# regardless of which directory the script is invoked from.
+sys.path.insert(0, str(Path(__file__).parent.parent))
+
+from app.lead_profile import LeadProfile
+from app import conversation_engine as engine
 
 
 def print_bot(message: str):

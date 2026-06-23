@@ -12,7 +12,7 @@ import json
 from pathlib import Path
 from typing import Optional
 
-KB_PATH = Path(__file__).parent / "knowledge_base.json"
+KB_PATH = Path(__file__).parent.parent / "data" / "knowledge_base.json"
 
 with open(KB_PATH, "r") as f:
     KB = json.load(f)
