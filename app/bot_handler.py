@@ -173,7 +173,9 @@ def handle_incoming_message(db: Session, from_number: str, user_text: str) -> st
         The reply text that was sent.
     """
     # Steps 1–2: get/create Lead row, reconstruct in-memory profile
-    lead, _ = _get_or_create_lead(db, from_number)
+    lead, is_new = _get_or_create_lead(db, from_number)
+    if is_new:
+        return OPENING_MESSAGE
     profile = _db_lead_to_profile(lead)
 
     # Step 3: load prior history (chronological)
